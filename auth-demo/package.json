@@ -1,0 +1,32 @@
+{
+  "name": "auth-demo",
+  "version": "1.0.0",
+  "description": "認証デモアプリケーション（Hono + React）",
+  "main": "server/index.ts",
+  "scripts": {
+    "dev": "tsx server/index.ts",
+    "build": "tsc",
+    "start": "node dist/server/index.js",
+    "client:dev": "cd client && npm run dev",
+    "client:build": "cd client && npm run build"
+  },
+  "keywords": ["authentication", "demo", "hono", "react"],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@hono/node-server": "^1.14.3",
+    "bcryptjs": "^3.0.2",
+    "cookie": "^1.0.2",
+    "cors": "^2.8.5",
+    "hono": "^4.7.11",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/node": "^22.15.30",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}

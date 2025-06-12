@@ -1,0 +1,1426 @@
+/* リセットCSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ベーススタイル */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.app {
+  width: 100%;
+  max-width: 1200px;
+  background: white;
+  min-height: calc(100vh - 40px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ヘッダー */
+.app-header {
+  background: linear-gradient(135deg, #2c3e50 0%, #4a6741 100%);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.app-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* タブナビゲーション */
+.tab-navigation {
+  display: flex;
+  background: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  overflow-x: auto;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6c757d;
+  min-width: 120px;
+}
+
+.tab-button:hover {
+  background: #e9ecef;
+  color: #495057;
+}
+
+.tab-button.active {
+  background: #007bff;
+  color: white;
+  border-bottom: 3px solid #0056b3;
+}
+
+/* メインコンテンツ */
+.main-content {
+  padding: 2rem;
+}
+
+.auth-demo {
+  max-width: 100%;
+}
+
+.auth-demo h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  border-bottom: 3px solid #007bff;
+  padding-bottom: 0.5rem;
+}
+
+/* デモ説明 */
+.demo-explanation {
+  background: #e7f3ff;
+  border-left: 4px solid #007bff;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 0 6px 6px 0;
+}
+
+.demo-explanation.vulnerability-warning {
+  background: #fff3cd;
+  border-left-color: #ffc107;
+  color: #856404;
+}
+
+.warning {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+  color: #856404;
+}
+
+/* フォーム */
+.auth-form {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border: 1px solid #dee2e6;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #495057;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ced4da;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.form-group small {
+  display: block;
+  margin-top: 0.25rem;
+  color: #6c757d;
+  font-size: 0.875rem;
+}
+
+/* ボタン */
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background: #007bff;
+  color: white;
+}
+
+button:hover:not(:disabled) {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.logout-button {
+  background: #dc3545;
+}
+
+.logout-button:hover:not(:disabled) {
+  background: #c82333;
+}
+
+.attack-button {
+  background: #fd7e14;
+}
+
+.attack-button:hover:not(:disabled) {
+  background: #e8620f;
+}
+
+.secondary-btn {
+  background: #6c757d;
+}
+
+.secondary-btn:hover:not(:disabled) {
+  background: #5a6268;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* MFA情報 */
+.mfa-info {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.mfa-info h3 {
+  color: #856404;
+  margin-bottom: 0.5rem;
+}
+
+/* Cognitoトークン */
+.cognito-tokens {
+  margin: 1rem 0;
+}
+
+.cognito-tokens h4 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+/* 情報パネル */
+.info-panel, .session-info, .jwt-info {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.info-panel h3, .session-info h3, .jwt-info h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+/* コードブロック */
+.code-block, .token-text {
+  background: #2c3e50;
+  color: #ecf0f1;
+  padding: 1rem;
+  border-radius: 6px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  word-break: break-all;
+  white-space: pre-wrap;
+  margin: 1rem 0;
+}
+
+.token-display {
+  margin: 1rem 0;
+}
+
+.token-text {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+/* 結果パネル */
+.result-panel {
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+  font-weight: 500;
+}
+
+.result-panel.success {
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+.result-panel.error {
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+
+.result-panel.warning {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  color: #856404;
+}
+
+/* JWT関連 */
+.jwt-decoded {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.jwt-parts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.jwt-part {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.jwt-part h4 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.jwt-part pre {
+  background: #f8f9fa;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  overflow-x: auto;
+  border: 1px solid #e9ecef;
+}
+
+.jwt-structure {
+  text-align: center;
+  margin: 1rem 0;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.jwt-part-demo {
+  display: inline-block;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+}
+
+.jwt-header {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.jwt-payload {
+  color: #9b59b6;
+  font-weight: bold;
+}
+
+.jwt-signature {
+  color: #3498db;
+  font-weight: bold;
+}
+
+.jwt-dot {
+  color: #2c3e50;
+  font-weight: bold;
+  margin: 0 0.25rem;
+}
+
+.payload-explanation {
+  background: #e7f3ff;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* 脆弱性デモ */
+.vulnerability-section {
+  margin-bottom: 3rem;
+  border: 2px solid #e74c3c;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.vulnerability-section h3 {
+  background: #e74c3c;
+  color: white;
+  padding: 1rem;
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.vulnerability-demo {
+  padding: 1.5rem;
+}
+
+.demo-form {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+}
+
+.hijack-demo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.legitimate-user, .attacker-section {
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.legitimate-user {
+  background: #d4edda;
+  border: 2px solid #28a745;
+}
+
+.attacker-section {
+  background: #f8d7da;
+  border: 2px solid #dc3545;
+}
+
+.session-display {
+  background: #2c3e50;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  margin: 0.5rem 0;
+}
+
+/* 攻撃ログ */
+.attack-log {
+  background: #2c3e50;
+  color: #ecf0f1;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.attack-log h4 {
+  color: #e74c3c;
+  margin-bottom: 0.75rem;
+}
+
+.log-content {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.875rem;
+}
+
+.log-entry {
+  margin: 0.25rem 0;
+  padding: 0.25rem;
+  border-radius: 3px;
+}
+
+.log-entry.success {
+  background: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+}
+
+.log-entry.failure {
+  background: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+}
+
+/* 対策 */
+.countermeasures, .mini-countermeasures {
+  background: #e7f3ff;
+  border-left: 4px solid #007bff;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 6px 6px 0;
+}
+
+.countermeasures h4 {
+  color: #0056b3;
+  margin-bottom: 0.5rem;
+}
+
+.countermeasures ul {
+  margin-left: 1rem;
+}
+
+.mini-countermeasures {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* その他の脆弱性 */
+.other-vulnerabilities {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.vulnerability-item {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.vulnerability-item h4 {
+  color: #856404;
+  margin-bottom: 0.5rem;
+}
+
+/* ベストプラクティス */
+.security-best-practices {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.security-best-practices h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.best-practices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.practice-category {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+
+.practice-category h4 {
+  color: #007bff;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.practice-category ul {
+  margin-left: 1rem;
+}
+
+/* デモ情報 */
+.demo-info {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.demo-info h3 {
+  color: #2c3e50;
+  margin: 1.5rem 0 1rem 0;
+  font-size: 1.25rem;
+}
+
+.demo-info h3:first-child {
+  margin-top: 0;
+}
+
+.demo-info ol, .demo-info ul {
+  margin-left: 1.5rem;
+}
+
+.demo-info ol li, .demo-info ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* 特徴グリッド */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.feature-item {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.feature-item h4 {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.feature-item ul {
+  margin-left: 1rem;
+}
+
+/* コード例 */
+.code-example {
+  margin: 1rem 0;
+}
+
+.code-example h4 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.code-example pre {
+  background: #2c3e50;
+  color: #ecf0f1;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 0.875rem;
+}
+
+/* フッター */
+.app-footer {
+  background: #2c3e50;
+  color: #ecf0f1;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 2rem;
+  }
+  
+  .app-header p {
+    font-size: 1rem;
+  }
+  
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .tab-navigation {
+    flex-direction: column;
+  }
+  
+  .tab-button {
+    min-width: unset;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .button-group button {
+    width: 100%;
+  }
+  
+  .hijack-demo {
+    grid-template-columns: 1fr;
+  }
+  
+  .jwt-parts {
+    grid-template-columns: 1fr;
+  }
+  
+  .feature-grid, .best-practices-grid, .other-vulnerabilities {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    margin: 0;
+  }
+  
+  .app-header {
+    padding: 1.5rem 1rem;
+  }
+  
+  .app-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .main-content {
+    padding: 0.75rem;
+  }
+  
+  .auth-form, .demo-form {
+    padding: 1rem;
+  }
+  
+  .auth-demo h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* 攻撃デモ専用スタイル */
+.attack-scenario-selector {
+  margin: 2rem 0;
+}
+
+.attack-scenario-selector h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.scenario-card {
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.scenario-card:hover {
+  border-color: #fd7e14;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.scenario-card.selected {
+  border-color: #dc3545;
+  background: #fff5f5;
+}
+
+.scenario-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.scenario-header h4 {
+  color: #2c3e50;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.severity-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.selected-attack-details {
+  background: #f8f9fa;
+  border: 2px solid #dc3545;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.selected-attack-details h3 {
+  color: #dc3545;
+  margin-bottom: 1rem;
+}
+
+.victim-info {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  border-radius: 0 6px 6px 0;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.victim-info h4 {
+  color: #856404;
+  margin-bottom: 0.75rem;
+}
+
+.victim-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.5rem;
+}
+
+.info-item {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.875rem;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ffeaa7;
+}
+
+.attack-controls {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.log-entry.info {
+  background: rgba(23, 162, 184, 0.1);
+  color: #17a2b8;
+}
+
+.log-timestamp {
+  color: #6c757d;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.log-action {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.log-details {
+  font-style: italic;
+}
+
+.countermeasures-section {
+  background: #e7f3ff;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.countermeasures-section h3 {
+  color: #0056b3;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.countermeasures-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.countermeasure-item {
+  background: white;
+  border: 1px solid #b6d7ff;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.countermeasure-item h4 {
+  color: #0056b3;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.countermeasure-item ul {
+  margin-left: 1rem;
+}
+
+.countermeasure-item li {
+  margin-bottom: 0.25rem;
+}
+
+.comprehensive-security {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.comprehensive-security h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.security-layers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.security-layer {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 1rem;
+  position: relative;
+}
+
+.security-layer h4 {
+  color: #28a745;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #d4edda;
+}
+
+.security-layer ul {
+  margin-left: 1rem;
+}
+
+.security-layer li {
+  margin-bottom: 0.25rem;
+}
+
+.legal-notice {
+  background: #f8d7da;
+  border: 2px solid #f5c6cb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.legal-notice h3 {
+  color: #721c24;
+  margin-bottom: 1rem;
+}
+
+.legal-notice p {
+  color: #721c24;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* レスポンシブ対応（攻撃デモ用） */
+@media (max-width: 768px) {
+  .scenario-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .victim-details {
+    grid-template-columns: 1fr;
+  }
+  
+  .attack-controls {
+    flex-direction: column;
+  }
+  
+  .attack-controls button {
+    width: 100%;
+  }
+  
+  .countermeasures-grid, .security-layers {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 攻撃図解専用スタイル */
+.attack-diagrams-container {
+  margin: 2rem 0;
+}
+
+.attack-diagram {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.attack-diagram h4 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.diagram-svg {
+  width: 100%;
+  height: auto;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  background: #f8f9fa;
+}
+
+.attack-flow-diagram {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+/* SVG内のテキストスタイル調整 */
+.diagram-svg text {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* レスポンシブ対応（図解用） */
+@media (max-width: 768px) {
+  .attack-diagram {
+    padding: 0.5rem;
+  }
+  
+  .attack-diagram h4 {
+    font-size: 1rem;
+  }
+  
+  .diagram-svg {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .diagram-svg {
+    height: 250px;
+  }
+  
+  .attack-flow-diagram {
+    padding: 0.5rem;
+  }
+}
+
+/* ステート管理専用スタイル */
+.state-diagrams-container {
+  margin: 2rem 0;
+}
+
+.state-diagram {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.state-diagram h4 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.state-concept-section, .state-examples-section, .session-basics-section {
+  margin: 2rem 0;
+}
+
+.state-concept-section h3, .state-examples-section h3, .session-basics-section h3 {
+  color: #2c3e50;
+  margin: 2rem 0 1rem 0;
+  font-size: 1.3rem;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.5rem;
+}
+
+.performance-comparison {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.performance-item {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.performance-item h4 {
+  color: #495057;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.performance-item p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.performance-item strong {
+  color: #007bff;
+}
+
+/* ステート図解内のSVGスタイル調整 */
+.state-diagram .diagram-svg {
+  background: #fdfdfd;
+}
+
+/* セッション図解専用スタイル */
+.session-diagrams-container {
+  margin: 2rem 0;
+}
+
+.session-basics-section .auth-demo h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  border-bottom: 3px solid #17a2b8;
+  padding-bottom: 0.5rem;
+}
+
+.concept-explanation, .lifecycle-explanation, .storage-explanation {
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.concept-explanation h4, .lifecycle-explanation h4, .storage-explanation h4 {
+  color: #2c3e50;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.faq-section {
+  margin: 1rem 0;
+}
+
+.faq-item {
+  background: #f8f9fa;
+  border-left: 4px solid #17a2b8;
+  border-radius: 0 6px 6px 0;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.faq-item h4 {
+  color: #138496;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.faq-item p {
+  color: #495057;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* セッションとステートの関係説明 */
+.relationship-explanation {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem 0;
+  border: 1px solid #dee2e6;
+}
+
+.relationship-explanation h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.3rem;
+  border-bottom: 2px solid #17a2b8;
+  padding-bottom: 0.5rem;
+}
+
+.concept-comparison {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.concept-item {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.concept-item h4 {
+  color: #495057;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.concept-item p {
+  color: #6c757d;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.concept-item ul {
+  margin-left: 1rem;
+  color: #495057;
+}
+
+.concept-item li {
+  margin-bottom: 0.5rem;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9rem;
+  background: #f8f9fa;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  border-left: 3px solid #17a2b8;
+}
+
+.analogy-box {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.analogy-box h4 {
+  color: #856404;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.analogy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.analogy-item {
+  background: white;
+  border: 1px solid #ffeaa7;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.analogy-item strong {
+  color: #856404;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.analogy-item p {
+  color: #6c757d;
+  margin: 0;
+  line-height: 1.4;
+  font-size: 0.9rem;
+}
+
+/* ステートとセッションの関係説明（まとめ）*/
+.auth-relationship-section {
+  margin: 2rem 0;
+}
+
+.auth-relationship-section h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #fd7e14;
+  padding-bottom: 0.5rem;
+}
+
+.auth-comparison {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin: 1.5rem 0;
+}
+
+.auth-type-item {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.auth-type-item h4 {
+  color: #495057;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  text-align: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f8f9fa;
+}
+
+.auth-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.flow-item {
+  display: flex;
+  align-items: flex-start;
+  background: #f8f9fa;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border-left: 4px solid #007bff;
+}
+
+.flow-label {
+  font-weight: 600;
+  color: #2c3e50;
+  min-width: 100px;
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+}
+
+.flow-desc {
+  color: #6c757d;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.summary-box {
+  background: #e7f3ff;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.summary-box h3 {
+  color: #0056b3;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.summary-box ul {
+  margin-left: 1rem;
+  color: #2c3e50;
+}
+
+.summary-box li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.summary-box strong {
+  color: #007bff;
+}
+
+/* レスポンシブ対応（ステート管理用） */
+@media (max-width: 768px) {
+  .state-diagram {
+    padding: 0.5rem;
+  }
+  
+  .state-diagram h4 {
+    font-size: 1rem;
+  }
+  
+  .performance-comparison {
+    grid-template-columns: 1fr;
+  }
+  
+  .state-concept-section h3, .state-examples-section h3, .session-basics-section h3 {
+    font-size: 1.1rem;
+  }
+  
+  .session-basics-section .auth-demo h2 {
+    font-size: 1.5rem;
+  }
+  
+  .faq-item {
+    padding: 0.75rem;
+  }
+  
+  .faq-item h4 {
+    font-size: 0.9rem;
+  }
+  
+  .relationship-explanation {
+    padding: 1rem;
+  }
+  
+  .concept-comparison {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .concept-item {
+    padding: 1rem;
+  }
+  
+  .analogy-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .analogy-box {
+    padding: 1rem;
+  }
+  
+  .auth-comparison {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .auth-type-item {
+    padding: 1rem;
+  }
+  
+  .flow-label {
+    min-width: 80px;
+    font-size: 0.85rem;
+  }
+  
+  .flow-desc {
+    font-size: 0.85rem;
+  }
+  
+  .summary-box {
+    padding: 1rem;
+  }
+}
