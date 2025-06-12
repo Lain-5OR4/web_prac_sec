@@ -1424,3 +1424,153 @@ button:disabled {
     padding: 1rem;
   }
 }
+
+/* JWT警告セクション用スタイル */
+.warning-section {
+  margin: 2rem 0;
+}
+
+.jwt-logout-warning {
+  background: #fff3cd;
+  border: 2px solid #ffc107;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 1.5rem 0;
+}
+
+.jwt-logout-warning h4 {
+  color: #856404;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  background: #ffc107;
+  color: #212529;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin: -2rem -2rem 1.5rem -2rem;
+}
+
+.comparison-table {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.comparison-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.comparison-table th {
+  background: #343a40;
+  color: white;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.comparison-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 0.9rem;
+}
+
+.comparison-table tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.comparison-table tr:hover {
+  background: #e9ecef;
+}
+
+.security-risks {
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.security-risks h4 {
+  color: #721c24;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.security-risks ul {
+  margin-left: 1rem;
+  color: #721c24;
+}
+
+.security-risks li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.security-risks strong {
+  color: #491217;
+}
+
+.mitigation-strategies {
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.mitigation-strategies h4 {
+  color: #155724;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.mitigation-strategies ul {
+  margin-left: 1rem;
+  color: #155724;
+}
+
+.mitigation-strategies li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.mitigation-strategies strong {
+  color: #0c2e0c;
+}
+
+/* JWT警告セクションのレスポンシブ対応 */
+@media (max-width: 768px) {
+  .jwt-logout-warning {
+    padding: 1rem;
+  }
+  
+  .jwt-logout-warning h4 {
+    font-size: 1rem;
+    margin: -1rem -1rem 1rem -1rem;
+    padding: 0.5rem;
+  }
+  
+  .comparison-table {
+    font-size: 0.8rem;
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.5rem;
+  }
+  
+  .security-risks,
+  .mitigation-strategies {
+    padding: 1rem;
+  }
+  
+  .security-risks li,
+  .mitigation-strategies li {
+    font-size: 0.9rem;
+  }
+}

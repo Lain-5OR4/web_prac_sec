@@ -58,7 +58,7 @@ const JWTAuth: React.FC = () => {
     setToken('');
     setDecodedJWT(null);
     setShowDecoded(false);
-    setResult('ログアウトしました。JWTトークンが削除されました。');
+    setResult('⚠️ クライアント側からトークンを削除しました。ただし、サーバー側ではトークンは依然として有効期限まで有効です。');
   };
 
   const decodeToken = () => {
@@ -253,6 +253,59 @@ const JWTAuth: React.FC = () => {
           <li>サーバーでトークンの署名を検証</li>
         </ol>
 
+        <h3>⚠️ 重要：JWTログアウトの制限</h3>
+        <div className="warning-section">
+          <div className="jwt-logout-warning">
+            <h4>🚨 JWTの「ログアウト」は真のログアウトではありません</h4>
+            <div className="comparison-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>認証方式</th>
+                    <th>ログアウト処理</th>
+                    <th>サーバー側での状態</th>
+                    <th>セキュリティ影響</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>セッション認証</strong></td>
+                    <td>サーバー側でセッション削除</td>
+                    <td>❌ セッション完全無効化</td>
+                    <td>✅ 即座にアクセス不可</td>
+                  </tr>
+                  <tr>
+                    <td><strong>JWT認証</strong></td>
+                    <td>クライアント側でトークン削除のみ</td>
+                    <td>⚠️ トークンは依然として有効</td>
+                    <td>❌ トークンが残存すれば利用可能</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div className="security-risks">
+              <h4>🔐 実際のセキュリティリスク</h4>
+              <ul>
+                <li><strong>共用端末の危険性：</strong> ブラウザの開発者ツールやローカルストレージにトークンが残存する可能性</li>
+                <li><strong>ネットワーク傍受：</strong> 通信が傍受された場合、有効期限まで悪用される可能性</li>
+                <li><strong>XSS攻撃：</strong> トークンが盗まれた場合、有効期限まで不正利用される</li>
+                <li><strong>アカウント乗っ取り：</strong> 管理者が権限を取り消してもトークンが有効なら継続してアクセス可能</li>
+              </ul>
+            </div>
+
+            <div className="mitigation-strategies">
+              <h4>🛡️ 対策方法</h4>
+              <ul>
+                <li><strong>短い有効期限：</strong> 15分〜1時間程度に設定</li>
+                <li><strong>リフレッシュトークン：</strong> アクセストークンとリフレッシュトークンの組み合わせ</li>
+                <li><strong>ブラックリスト：</strong> 無効化したトークンのリストを管理（ステートレスの利点が減少）</li>
+                <li><strong>セキュアな保存：</strong> HttpOnly Cookieでの保存（XSS対策）</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         <h3>JWT認証の特徴</h3>
         <div className="feature-grid">
           <div className="feature-item">
@@ -268,9 +321,10 @@ const JWTAuth: React.FC = () => {
             <h4>❌ デメリット</h4>
             <ul>
               <li>トークンサイズが大きい</li>
-              <li>リボーク（無効化）が困難</li>
+              <li><strong>リボーク（無効化）が困難</strong></li>
               <li>機密情報をペイロードに含めてはいけない</li>
               <li>クライアント側での適切な保存が必要</li>
+              <li><strong>真のログアウトが実装困難</strong></li>
             </ul>
           </div>
         </div>
