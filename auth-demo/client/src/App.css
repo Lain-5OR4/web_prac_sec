@@ -12,7 +12,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #f5f5f5;
   min-height: 100vh;
   color: #333;
   line-height: 1.6;
@@ -20,11 +20,14 @@ body {
   justify-content: center;
   align-items: flex-start;
   padding: 20px;
+  min-width: 1240px;
+  overflow-x: auto;
 }
 
 .app {
   width: 100%;
   max-width: 1200px;
+  min-width: 1200px;
   background: white;
   min-height: calc(100vh - 40px);
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
@@ -57,6 +60,8 @@ body {
   background: #f8f9fa;
   border-bottom: 1px solid #dee2e6;
   overflow-x: auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .tab-button {
@@ -86,10 +91,18 @@ body {
 /* メインコンテンツ */
 .main-content {
   padding: 2rem;
+  min-height: 600px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .auth-demo {
   max-width: 100%;
+  width: 100%;
+  min-height: 500px;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .auth-demo h2 {
@@ -1572,5 +1585,388 @@ button:disabled {
   .security-risks li,
   .mitigation-strategies li {
     font-size: 0.9rem;
+  }
+}
+
+/* Mermaidシーケンス図用スタイル */
+.sequence-diagram-section {
+  margin: 2rem 0;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #dee2e6;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.sequence-diagram-section h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.5rem;
+}
+
+.diagram-description {
+  color: #6c757d;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.mermaid-container {
+  background: white;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow-x: auto;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mermaid {
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Mermaid図のテーマカスタマイズ */
+.mermaid .actor {
+  fill: #f8f9fa;
+  stroke: #007bff;
+  stroke-width: 2px;
+}
+
+.mermaid .actor-line {
+  stroke: #6c757d;
+  stroke-width: 1px;
+  stroke-dasharray: 3,3;
+}
+
+.mermaid .messageLine0 {
+  stroke: #007bff;
+  stroke-width: 2px;
+}
+
+.mermaid .messageLine1 {
+  stroke: #28a745;
+  stroke-width: 2px;
+}
+
+.mermaid .messageText {
+  fill: #495057;
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.mermaid .labelText {
+  fill: #495057;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.mermaid .loopText {
+  fill: #856404;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.mermaid .noteText {
+  fill: #856404;
+  font-size: 10px;
+}
+
+.mermaid .note {
+  fill: #fff3cd;
+  stroke: #ffc107;
+  stroke-width: 1px;
+}
+
+/* レスポンシブ対応（Mermaid図用） */
+@media (max-width: 768px) {
+  .sequence-diagram-section {
+    padding: 1rem;
+  }
+  
+  .sequence-diagram-section h3 {
+    font-size: 1rem;
+  }
+  
+  .diagram-description {
+    font-size: 0.9rem;
+  }
+  
+  .mermaid-container {
+    padding: 0.5rem;
+  }
+  
+  .mermaid {
+    min-height: 300px;
+  }
+  
+  /* モバイルでの図のフォントサイズ調整 */
+  .mermaid .messageText {
+    font-size: 10px;
+  }
+  
+  .mermaid .labelText {
+    font-size: 9px;
+  }
+  
+  .mermaid .noteText {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mermaid {
+    min-height: 250px;
+  }
+  
+  .mermaid .messageText {
+    font-size: 9px;
+  }
+  
+  .mermaid .labelText {
+    font-size: 8px;
+  }
+}
+
+/* Mermaidエラー表示とローディング */
+.mermaid-loading {
+  text-align: center;
+  padding: 2rem;
+  color: #6c757d;
+  font-style: italic;
+}
+
+.mermaid-error {
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+  color: #721c24;
+}
+
+.mermaid-error p {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.mermaid-error details {
+  margin-top: 0.5rem;
+}
+
+.mermaid-error summary {
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.mermaid-error pre {
+  background: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+  color: #495057;
+}
+
+/* ズーム機能付きMermaidビューア */
+.mermaid-viewer-normal {
+  position: relative;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.mermaid-viewer-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.fullscreen-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9998;
+}
+
+.mermaid-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  flex-shrink: 0;
+}
+
+.zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.zoom-controls button {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  min-width: 2rem;
+  transition: all 0.2s ease;
+}
+
+.zoom-controls button:hover:not(:disabled) {
+  background: #e9ecef;
+  border-color: #007bff;
+}
+
+.zoom-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.zoom-level {
+  font-weight: 600;
+  color: #495057;
+  min-width: 50px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.view-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.view-controls button {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.view-controls button:hover {
+  background: #e9ecef;
+  border-color: #007bff;
+}
+
+.view-controls .close-btn {
+  background: #dc3545;
+  color: white;
+  border-color: #dc3545;
+}
+
+.view-controls .close-btn:hover {
+  background: #c82333;
+  border-color: #bd2130;
+}
+
+.mermaid-viewport {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  background: #fdfdfd;
+  min-height: 400px;
+}
+
+.mermaid-viewer-fullscreen .mermaid-viewport {
+  height: calc(100vh - 120px);
+}
+
+.mermaid-content {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.1s ease-out;
+  transform-origin: center center;
+}
+
+.fullscreen-info {
+  background: #e7f3ff;
+  border-top: 1px solid #bee5eb;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.fullscreen-info p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #0c5460;
+}
+
+/* レスポンシブ対応（ズーム機能用） */
+@media (max-width: 768px) {
+  .mermaid-controls {
+    padding: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .zoom-controls,
+  .view-controls {
+    gap: 0.25rem;
+  }
+  
+  .zoom-controls button,
+  .view-controls button {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.8rem;
+    min-width: 1.8rem;
+  }
+  
+  .zoom-level {
+    font-size: 0.8rem;
+    min-width: 45px;
+  }
+  
+  .fullscreen-info p {
+    font-size: 0.75rem;
+  }
+  
+  .mermaid-viewport {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mermaid-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .zoom-controls,
+  .view-controls {
+    justify-content: center;
   }
 }

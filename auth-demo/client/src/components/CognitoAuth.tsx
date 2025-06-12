@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AuthSequenceDiagrams from './AuthSequenceDiagrams';
 
 interface CognitoUser {
   username: string;
@@ -410,6 +411,8 @@ const CognitoAuth: React.FC = () => {
           <pre>{result}</pre>
         </div>
       )}
+
+      <AuthSequenceDiagrams type="cognito" />
 
       <div className="demo-info">
         <h3>AWS Cognitoの特徴</h3>

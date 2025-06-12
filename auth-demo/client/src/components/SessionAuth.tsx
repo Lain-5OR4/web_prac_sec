@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import AuthSequenceDiagrams from './AuthSequenceDiagrams';
 
 interface User {
   id: string;
@@ -179,6 +180,8 @@ const SessionAuth: React.FC = () => {
           {result}
         </div>
       )}
+
+      <AuthSequenceDiagrams type="session" />
 
       <div className="demo-info">
         <h3>セッション認証の流れ</h3>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AuthSequenceDiagrams from './AuthSequenceDiagrams';
 
 interface AuthResponse {
   success: boolean;
@@ -122,6 +123,8 @@ const BasicAuth: React.FC = () => {
           )}
         </div>
       )}
+
+      <AuthSequenceDiagrams type="basic" />
 
       <div className="demo-info">
         <h3>サンプルアカウント</h3>

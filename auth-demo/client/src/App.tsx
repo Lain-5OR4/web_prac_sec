@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import BasicAuth from './components/BasicAuth';
 import SessionAuth from './components/SessionAuth';
 import JWTAuth from './components/JWTAuth';
 import CognitoAuth from './components/CognitoAuth';
-import VulnerabilityDemo from './components/VulnerabilityDemo';
 import AttackDemo from './components/AttackDemo';
 import StateDiagrams from './components/StateDiagrams';
 import SessionDiagrams from './components/SessionDiagrams';
 import StateSessionRelationship from './components/StateSessionRelationship';
 
-type AuthMethod = 'stateful-stateless' | 'basic' | 'session' | 'jwt' | 'cognito' | 'vulnerabilities' | 'attacks';
+type AuthMethod = 'stateful-stateless' | 'basic' | 'session' | 'jwt' | 'cognito' | 'attacks';
 
 function App() {
   const [activeTab, setActiveTab] = useState<AuthMethod>('stateful-stateless');
@@ -21,7 +20,6 @@ function App() {
     { key: 'session', label: 'セッション認証' },
     { key: 'jwt', label: 'JWT認証' },
     { key: 'cognito', label: 'AWS Cognito' },
-    { key: 'vulnerabilities', label: '脆弱性例' },
     { key: 'attacks', label: '乗っ取り攻撃' },
   ];
 
@@ -113,8 +111,6 @@ function App() {
         return <JWTAuth />;
       case 'cognito':
         return <CognitoAuth />;
-      case 'vulnerabilities':
-        return <VulnerabilityDemo />;
       case 'attacks':
         return <AttackDemo />;
       default:

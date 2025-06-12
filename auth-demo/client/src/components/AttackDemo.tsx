@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import AttackDiagrams from './AttackDiagrams';
 
 interface AttackScenario {
@@ -19,7 +19,7 @@ const AttackDemo: React.FC = () => {
   const [selectedAttack, setSelectedAttack] = useState<string>('credential-stuffing');
   const [attackLogs, setAttackLogs] = useState<AttackLog[]>([]);
   const [isAttacking, setIsAttacking] = useState(false);
-  const [victimAccount, setVictimAccount] = useState({
+  const [victimAccount] = useState({
     username: 'victim@example.com',
     password: 'password123',
     sessionId: 'session_abc123xyz',

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AuthSequenceDiagrams from './AuthSequenceDiagrams';
 
 interface JWTPayload {
   userId: string;
@@ -244,6 +245,8 @@ const JWTAuth: React.FC = () => {
           </div>
         </div>
 
+        <AuthSequenceDiagrams type="jwt" />
+        
         <h3>JWT認証の流れ</h3>
         <ol>
           <li>ユーザーがログイン情報を送信</li>
