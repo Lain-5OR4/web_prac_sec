@@ -151,6 +151,4 @@ npm run dev
 
 ---
 
-🔗 **リポジトリ**: https://github.com/Lain-5OR4/web_prac_sec
-
 📚 **詳細な使用方法**: [auth-demo/README.md](./auth-demo/README.md) を参照してください。
